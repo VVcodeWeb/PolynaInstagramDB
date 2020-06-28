@@ -1,21 +1,32 @@
 {
-  "name": "polina_db",
+  "name": "polynainstagramdb",
   "version": "1.0.0",
   "description": "Database for Polya",
   "main": "index.js",
   "scripts": {
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js -e js hbs css"
   },
-  "author": "",
+  "author": "V.V",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.5.0",
     "env-cmd": "^10.1.0",
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "mongoose": "^5.9.20",
+    "npm-install-all": "^1.1.21",
     "validator": "^13.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnlyAltOne/PolynaInstagramDB.git"
+  },
+  "bugs": {
+    "url": "https://github.com/OnlyAltOne/PolynaInstagramDB/issues"
+  },
+  "homepage": "https://github.com/OnlyAltOne/PolynaInstagramDB#readme"
 }

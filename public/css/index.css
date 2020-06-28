@@ -1,7 +1,81 @@
-body{
-    margin:0;
-    background: url("../img/background.jpg") ;
+* {
+    padding: 0;
+    margin: 0;   
 }
-.welcome-msg{
+a:link{
+    text-decoration: none;
+}
+h1{
+    font-family: 'Yellowtail', cursive;
+}
+/* main page */
+.main_container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
 
+.main_container::before {
+    content: "";
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
 }
+
+.welcome-msg {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    color: red;
+}
+
+.linkToAcc {
+    position: relative;
+}
+.linkToDB{
+    position: relative;
+}
+
+
+/* Add accounts page  */
+.addAccBlocks{
+    height: 100vh;
+    width: 25%;
+    background-color: #D8BFD8;
+    float:left;
+}
+
+.middle{
+    text-align: center;
+    width:50%;
+    background-color: #ffffff;
+}
+.input{
+    margin: 0 15%;
+}
+.link{
+    color:black;
+    display: inline;
+}
+.link:hover{
+    color:#FF851B;
+}
+.toMain{
+    padding-right: 10%;
+}
+.toDB{
+    padding-left: 10%;
+}
+@media (max-width: 830px){
+    .link{
+        display: block;
+        padding: 0;
+    }
+}
+
+/* Database page */

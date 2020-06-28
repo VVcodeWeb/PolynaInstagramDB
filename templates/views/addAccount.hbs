@@ -1,0 +1,69 @@
+{{>header}}
+
+<body>
+    <div class="wrapContainer">
+        <div class="addAccBlocks"></div>
+        <div class="addAccBlocks middle">
+            <div class="header-navbar">
+                <h1>Page for adding new accounts to data base</h1>
+                <a href="/"><h3 class="link toMain">Main Page</h3></a>
+                <a href="/database"><h3 class="link toDB">View Database</h3></a>
+            </div>
+            <hr>
+            <div class="input">
+                <form action="/account" method="post">
+                    <div class="form-group">
+                        <label for="instaURL">Ссылка на аккаунт</label>
+                        <input type="url" class="form-control" name="url" id="instaURL" aria-describedby="urlLove"
+                            autocomplete="off">
+                        <small id="urlLove" class="form-text text-muted">love u</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="theme">Тематика</label>
+                        <input type="text" class="form-control" name="theme" id="theme" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="product">Продукт</label>
+                        <input type="text" class="form-control" name="product" id="product" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="reach">Охват</label>
+                        <input type="text" class="form-control" name="reach" id="reach" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="cost">Стоимость размещения</label>
+                        <input type="text" class="form-control" name="cost" id="cost" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="subscribersIncome">Средний приход подписчиков</label>
+                        <input type="text" class="form-control" name="subscribersIncome" id="subscribersIncome"
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="percentTAgeo">% ЦА с нужной гео</label>
+                        <input type="text" class="form-control" name="percentTAgeo" id="percentTAgeo"
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="percentTAsex">% ЦА с нужным полом</label>
+                        <input type="text" class="form-control" name="percentTAsex" id="percentTAsex"
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="percentTAage">% ЦА с нужным возрастом</label>
+                        <input type="text" class="form-control" name="percentTAage" id="percentTAage"
+                            autocomplete="off">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+        </div>
+        <div class="addAccBlocks"></div>
+    </div>
+
+</body>
+
+{{>footer}}
