@@ -11,7 +11,7 @@
             </div>
             <hr>
             <div class="input">
-                <form action="/account" method="post">
+                <form action="/database/account" method="post">
                     <div class="form-group">
                         <label for="instaURL">Ссылка на аккаунт</label>
                         <input type="url" class="form-control" name="url" id="instaURL" aria-describedby="urlLove"
@@ -52,6 +52,11 @@
                     <div class="form-group">
                         <label for="percentTAage">% ЦА с нужным возрастом</label>
                         <input type="text" class="form-control" name="percentTAage" id="percentTAage"
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Коментарий</label>
+                        <input type="text" class="form-control" name="description" id="description"
                             autocomplete="off">
                     </div>
 

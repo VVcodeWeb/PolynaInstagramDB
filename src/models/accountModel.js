@@ -62,7 +62,9 @@ const accountSchema = new mongoose.Schema({
                 throw new Error("Enter numbers for percentTAage")
         }
     },
-
+    description:{
+        type:String
+    },
     //calculated
     TA:{
         type:Number
@@ -80,7 +82,12 @@ const accountSchema = new mongoose.Schema({
 
 
 })
-
+accountSchema.statics.findByUrl = async(url) =>{
+    const account = await Account.findOne({url})
+    if(!account)
+        throw new Error('Cant find account')
+    return account
+}
 
 const Account = mongoose.model('Accounts', accountSchema)
 
