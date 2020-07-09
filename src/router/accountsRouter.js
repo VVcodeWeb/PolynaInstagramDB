@@ -5,14 +5,7 @@ const router = new express.Router
 const Account = require('../models/accountModel')
 const { handlebars } = require('hbs')
 
-
 router.get('/database', async(req, res) => {
-    Account.find({}, function (err, accounts) {
-        res.render('viewDB', {accounts:accounts})
-    })
-})
-router.get('/database/account', async (req, res) => {
-    try {
         if(req.query.url){
             const accounts = []
             const account = await Account.findOne({url: req.query.url})
@@ -22,12 +15,27 @@ router.get('/database/account', async (req, res) => {
             await Account.find({theme: req.query.theme}, function(err, accounts){
                 res.render('viewDB', {accounts: accounts})
             })
-        }
-    } catch (e) {  
-        res.render('viewDB')
+        } else {
+            await Account.find({}, function (err, accounts) {
+            res.render('viewDB', {accounts:accounts})
+        })
     }
 })
 
+
+router.delete('/database', async(req, res) =>{
+    try{
+        console.log("delete request")
+        if(req.query.url){
+            await Account.deleteOne({url: req.query.url})
+            console.log("hi")
+            res.redirect('/database')
+        }
+
+    }catch(e){
+        res.status(404)
+    }
+})
 
 router.post('/database/account', async(req, res) => {
     const account = createAccount(req.body)

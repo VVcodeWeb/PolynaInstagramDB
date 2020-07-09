@@ -22,3 +22,21 @@
 .viewDBB{
     text-align: left;
 }
+
+.deleteButton{
+    display: inline;
+    padding: 2px;
+    border: none;
+}
+
+.deleteForm{
+    display: inline;
+}
+.comment{
+    display: inline;
+    border: none;
+}
+
+.comment:hover{
+    cursor: pointer;
+}

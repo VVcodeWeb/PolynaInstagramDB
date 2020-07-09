@@ -11,11 +11,11 @@
             <h3 class="linkInDB linkToAdd">Add new accounts</h3>
         </a>
         <div class="search">
-            <form class="finder form-inline" action="/database/account?:url" method="get">
+            <form class="finder form-inline" action="/database?:url" method="get">
                 <input class="form-control" type="text" name="url" id="url" placeholder="Enter URL">
                 <button class="find btn btn-dark" type="submit">Find Account</button>
             </form>
-            <form class="finder form-inline" action="/database/account?:theme" method="get">
+            <form class="finder form-inline" action="/database?:theme" method="get">
                 <input class="form-control" type="text" name="theme" id="theme" placeholder="Enter theme">
                 <button class="find btn btn-dark" type="submit">Find Accounts</button>
             </form>
@@ -44,6 +44,7 @@
                 <th scope="col">costReachTA</th>
                 <th scope="col">costReach</th>
                 <th scope="col">Стоимость Подписчика</th>
+                <th scope="col">addition</th>
             </tr>
             </thread>
         <tbody>
@@ -54,8 +55,8 @@
                 <th>{{this.theme}}</th>
                 <th>{{this.product}}</th>
                 <th>{{this.reach}}</th>
-                <th>{{this.subscribersIncome}}</th>
                 <th>{{this.cost}}</th>
+                <th>{{this.subscribersIncome}}</th>
                 <th>{{this.percentTAgeo}}</th>
                 <th>{{this.percentTAsex}}</th>
                 <th>{{this.percentTAage}}</th>
@@ -63,9 +64,24 @@
                 <th>{{this.costReachTA}}</th>
                 <th>{{this.costReach}}</th>
                 <th>{{this.subscriberCost}}</th>
+                <th><div class="addition">
+                    <form class="deleteForm" action="/database" method="delete">
+                        <input type="hidden" name="url" id="url" value="{{this.url}}">
+                        <button class="deleteButton" type="submit"><img src="img/trash.png" alt="delete"></button>
+                    </form>
+                    <img class="comment" onclick="displayMsg('{{this.description}}')" src="img/comment.png" alt="">
+                </div>
+                </th>
             </tr>
             {{/each}}
         </tbody>
     </table>
 </body>
+<script>
+function displayMsg(msg) {
+    alert(msg)
+}
+</script>
+<script src="js/viewDB.js"></script>
+
 {{>footer}}
