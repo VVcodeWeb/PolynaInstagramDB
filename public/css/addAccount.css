@@ -1,0 +1,40 @@
+.addAccBlocks{
+    height: 120vh;
+    width: 25%;
+    background-color: #D8BFD8;
+    float:left;
+}
+
+.middle{
+    text-align: center;
+    width:50%;
+    background-color: #ffffff;
+}
+.input{
+    margin: 0 15%;
+}
+.linkInAcc{
+    color:black;
+    display: inline;
+}
+.linkInAcc:hover{
+    color:#FF851B;
+}
+.toMain{
+    padding-right: 10%;
+}
+.toDB{
+    padding-left: 10%;
+}
+@media (max-width: 830px){
+    .link{
+        display: block;
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px){
+    .addAccBlocks{
+        height: 150vh;
+    }
+}

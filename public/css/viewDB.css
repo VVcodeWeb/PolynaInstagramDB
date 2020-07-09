@@ -1,0 +1,24 @@
+.header_db{
+    background-color: #D8BFD8;
+    text-align: center;
+}
+.linkInDB{
+    color:black;
+    display: inline;
+    margin: 10%;
+}
+.linkInDB:hover{
+    color:#FF851B;
+}
+.search{
+    padding: 15px 5;
+}
+.find{
+    margin-left: 1.5%;
+}
+.finder{
+    margin: 10px;
+}
+.viewDBB{
+    text-align: left;
+}

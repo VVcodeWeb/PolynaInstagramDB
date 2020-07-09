@@ -7,8 +7,8 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-const viewsPath = path.join(__dirname, '../templates/views')
-const partialsPath = path.join(__dirname, '../templates/partials')
+const viewsPath = path.join(__dirname, '../public/templates/views')
+const partialsPath = path.join(__dirname, '../public/templates/partials')
 
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)

@@ -4,7 +4,7 @@
   "description": "Database for Polya",
   "main": "index.js",
   "scripts": {
-    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js -e js hbs css"
+    "dev": "env-cmd -f config/dev.env nodemon src/index.js -e js hbs css"
   },
   "author": "V.V",
   "license": "ISC",
@@ -16,6 +16,8 @@
     "hbs": "^4.1.1",
     "mongoose": "^5.9.20",
     "npm-install-all": "^1.1.21",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "validator": "^13.1.1"
   },
   "devDependencies": {

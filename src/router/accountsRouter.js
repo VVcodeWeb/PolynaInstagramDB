@@ -1,25 +1,32 @@
+const react = require("react")
+const ReactDOM = require("react-dom")
 const express = require('express')
 const router = new express.Router
 const Account = require('../models/accountModel')
 const { handlebars } = require('hbs')
+
 
 router.get('/database', async(req, res) => {
     Account.find({}, function (err, accounts) {
         res.render('viewDB', {accounts:accounts})
     })
 })
-
-router.get('/database/account?:url', async (req, res) => {
+router.get('/database/account', async (req, res) => {
     try {
-        const account = await Account.findOne({url: req.query.url})
-        res.render('viewDB', {
-                account: account
+        if(req.query.url){
+            const accounts = []
+            const account = await Account.findOne({url: req.query.url})
+            accounts[0] = account
+            res.render('viewDB', {accounts:accounts})
+        } else if(req.query.theme){
+            await Account.find({theme: req.query.theme}, function(err, accounts){
+                res.render('viewDB', {accounts: accounts})
             })
+        }
     } catch (e) {  
-        res.status(400).send(e)
+        res.render('viewDB')
     }
 })
-
 
 
 router.post('/database/account', async(req, res) => {

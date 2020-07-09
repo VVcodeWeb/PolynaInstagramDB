@@ -1,0 +1,71 @@
+<link rel="stylesheet" type="text/css" href="css/viewDB.css">
+{{>header}}
+
+<body>
+    <div class="header_db">
+        <h1>welcome to DB</h1>
+        <a href="/">
+            <h3 class="linkInDB toMain">Main Page</h3>
+        </a>
+        <a href="/addaccount">
+            <h3 class="linkInDB linkToAdd">Add new accounts</h3>
+        </a>
+        <div class="search">
+            <form class="finder form-inline" action="/database/account?:url" method="get">
+                <input class="form-control" type="text" name="url" id="url" placeholder="Enter URL">
+                <button class="find btn btn-dark" type="submit">Find Account</button>
+            </form>
+            <form class="finder form-inline" action="/database/account?:theme" method="get">
+                <input class="form-control" type="text" name="theme" id="theme" placeholder="Enter theme">
+                <button class="find btn btn-dark" type="submit">Find Accounts</button>
+            </form>
+            <form class="finder viewDBB" action="/database" method="get">
+                <button class="btn btn-dark" type="submit">View DB</button>
+            </form>
+
+        </div>
+
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Ссылка на аккаунт</th>
+                <th scope="col">Тематика</th>
+                <th scope="col">Продукт</th>
+                <th scope="col">Охват</th>
+                <th scope="col">Стоимость размещения</th>
+                <th scope="col">Средний приход подписчиков</th>
+                <th scope="col">% ЦА с нужной гео</th>
+                <th scope="col">% ЦА с нужным полом</th>
+                <th scope="col">% ЦА с нужным возрастом</th>
+                <th scope="col">ЦА</th>
+                <th scope="col">costReachTA</th>
+                <th scope="col">costReach</th>
+                <th scope="col">Стоимость Подписчика</th>
+            </tr>
+            </thread>
+        <tbody>
+            {{#each accounts}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <th><a href="{{this.url}}" target="blank">{{this.url}}</a></th>
+                <th>{{this.theme}}</th>
+                <th>{{this.product}}</th>
+                <th>{{this.reach}}</th>
+                <th>{{this.subscribersIncome}}</th>
+                <th>{{this.cost}}</th>
+                <th>{{this.percentTAgeo}}</th>
+                <th>{{this.percentTAsex}}</th>
+                <th>{{this.percentTAage}}</th>
+                <th>{{this.TA}}</th>
+                <th>{{this.costReachTA}}</th>
+                <th>{{this.costReach}}</th>
+                <th>{{this.subscriberCost}}</th>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</body>
+{{>footer}}
