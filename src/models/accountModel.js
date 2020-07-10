@@ -67,16 +67,16 @@ const accountSchema = new mongoose.Schema({
     },
     //calculated
     TA:{
-        type:Number
+        type:String
     },
     costReachTA:{
-        type:Number
+        type:String
     },
     costReach:{
-        type:Number
+        type:String
     },
     subscriberCost:{
-        type:Number
+        type:String
     },
 
 

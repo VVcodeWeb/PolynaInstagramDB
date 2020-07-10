@@ -5,6 +5,8 @@ const router = new express.Router
 const Account = require('../models/accountModel')
 const { handlebars } = require('hbs')
 
+/* TODO:Rework router, add /database/search?query */
+/* TODO: Sorting!*/
 router.get('/database', async(req, res) => {
         if(req.query.url){
             const accounts = []
@@ -17,23 +19,23 @@ router.get('/database', async(req, res) => {
             })
         } else {
             await Account.find({}, function (err, accounts) {
-            res.render('viewDB', {accounts:accounts})
+                res.render('viewDB', {accounts:accounts})
         })
     }
 })
 
 
-router.delete('/database', async(req, res) =>{
+router.delete('/database/account', async(req, res) =>{
     try{
-        console.log("delete request")
         if(req.query.url){
-            await Account.deleteOne({url: req.query.url})
-            console.log("hi")
-            res.redirect('/database')
+            const deleted = await (await Account.deleteOne({url: req.query.url})).deletedCount
+            if(deleted == 0)
+                res.send("Ошибка, аккаунта нет в базе данных")
+            else 
+                res.send("Отлично, аккаунт удалён")
         }
-
     }catch(e){
-        res.status(404)
+        res.status(404).send(e)
     }
 })
 

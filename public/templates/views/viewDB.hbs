@@ -27,7 +27,7 @@
 
     </div>
 
-    <table class="table table-striped table-bordered">
+    <table class="mainTable table table-striped table-bordered">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">ID</th>
@@ -64,24 +64,27 @@
                 <th>{{this.costReachTA}}</th>
                 <th>{{this.costReach}}</th>
                 <th>{{this.subscriberCost}}</th>
-                <th><div class="addition">
-                    <form class="deleteForm" action="/database" method="delete">
-                        <input type="hidden" name="url" id="url" value="{{this.url}}">
-                        <button class="deleteButton" type="submit"><img src="img/trash.png" alt="delete"></button>
-                    </form>
-                    <img class="comment" onclick="displayMsg('{{this.description}}')" src="img/comment.png" alt="">
-                </div>
+                <th>
+                    <div class="addition">
+                        <img class="imgInAddition" onclick="submitForm('{{this.url}}')" src="img/trash.png" alt="del">
+                        <img class="imgInAddition" onclick="displayMsg('{{this.description}}', 'false')" src="img/comment.png" alt="com">
+                    </div>
                 </th>
             </tr>
             {{/each}}
         </tbody>
     </table>
+    <div id="hiddenComment">
+        <p id="hiddenP"></p>
+        <button class="rightButton btn btn-dark" id="closeButton" type="submit">Закрыть</button>
+    </div>
+    <div id="hiddenDelete">
+        <p id="hiddenDel">Ты уверена, что хочешь удалить этот аккаунт из базы данных?</p>
+        <button class="rightButton btn btn-success" id="acceptButton">ДА</button>
+        <button class="leftButton btn btn-danger" id="declineButton">НЕТ</button>
+    </div>
 </body>
-<script>
-function displayMsg(msg) {
-    alert(msg)
-}
-</script>
+<script src="js/jquery-3.5.1.min.js"></script>
 <script src="js/viewDB.js"></script>
 
 {{>footer}}
