@@ -15,7 +15,8 @@ app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 app.use(bodyParser.urlencoded({extended:true}))
-app.use(express.static(path.join(__dirname, '../public')))
+//app.use(express.static(path.join(__dirname, '../public')))
+app.use('/static', express.static('public'))
 app.use(accountRouter)
 
 app.get('', (req, res) => {

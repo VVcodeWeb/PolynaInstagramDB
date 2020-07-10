@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="css/viewDB.css">
+<link rel="stylesheet" type="text/css" href="/static/css/viewDB.css">
 {{>header}}
 
 <body>
@@ -11,17 +11,17 @@
             <h3 class="linkInDB linkToAdd">Add new accounts</h3>
         </a>
         <div class="search">
-            <form class="finder form-inline" action="/database?:url" method="get">
+            <form class="finder form-inline" action="/database/search?:url" method="get">
                 <input class="form-control" type="text" name="url" id="url" placeholder="Enter URL">
                 <button class="find btn btn-dark" type="submit">Find Account</button>
             </form>
-            <form class="finder form-inline" action="/database?:theme" method="get">
+            <form class="finder form-inline" action="/database/search?:theme" method="get">
                 <input class="form-control" type="text" name="theme" id="theme" placeholder="Enter theme">
                 <button class="find btn btn-dark" type="submit">Find Accounts</button>
             </form>
-            <form class="finder viewDBB" action="/database" method="get">
-                <button class="btn btn-dark" type="submit">View DB</button>
-            </form>
+            <div class="finder viewDBB">
+                <a href="/database"><button class="btn btn-dark" type="submit">View DB</button></a>
+            </div>
 
         </div>
 
@@ -66,8 +66,8 @@
                 <th>{{this.subscriberCost}}</th>
                 <th>
                     <div class="addition">
-                        <img class="imgInAddition" onclick="submitForm('{{this.url}}')" src="img/trash.png" alt="del">
-                        <img class="imgInAddition" onclick="displayMsg('{{this.description}}', 'false')" src="img/comment.png" alt="com">
+                        <img class="imgInAddition" onclick="submitForm('{{this.url}}')" src="/static/img/trash.png" alt="del">
+                        <img class="imgInAddition" onclick="displayMsg('{{this.description}}', 'false')" src="/static/img/comment.png" alt="com">
                     </div>
                 </th>
             </tr>
@@ -84,7 +84,7 @@
         <button class="leftButton btn btn-danger" id="declineButton">НЕТ</button>
     </div>
 </body>
-<script src="js/jquery-3.5.1.min.js"></script>
-<script src="js/viewDB.js"></script>
+<script src="/static/js/jquery-3.5.1.min.js"></script>
+<script src="/static/js/viewDB.js"></script>
 
 {{>footer}}

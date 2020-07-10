@@ -8,22 +8,27 @@ const { handlebars } = require('hbs')
 /* TODO:Rework router, add /database/search?query */
 /* TODO: Sorting!*/
 router.get('/database', async(req, res) => {
-        if(req.query.url){
-            const accounts = []
-            const account = await Account.findOne({url: req.query.url})
-            accounts[0] = account
+    await Account.find({}, function (err, accounts) {
+        res.render('viewDB', {accounts:accounts})
+    })
+})
+
+router.get('/database/search', async(req, res) => {
+    if(req.query.url){
+        const accounts = []
+        const account = await Account.findOne({url: req.query.url})
+        accounts[0] = account
+        res.render('viewDB', {accounts:accounts})
+    } else if(req.query.theme){
+        await Account.find({theme: req.query.theme}, function(err, accounts){
+            res.render('viewDB', {accounts: accounts})
+        })
+    } else{ 
+        await Account.find({}, function (err, accounts) {
             res.render('viewDB', {accounts:accounts})
-        } else if(req.query.theme){
-            await Account.find({theme: req.query.theme}, function(err, accounts){
-                res.render('viewDB', {accounts: accounts})
-            })
-        } else {
-            await Account.find({}, function (err, accounts) {
-                res.render('viewDB', {accounts:accounts})
         })
     }
 })
-
 
 router.delete('/database/account', async(req, res) =>{
     try{
