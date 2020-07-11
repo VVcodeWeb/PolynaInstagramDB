@@ -4,7 +4,9 @@
     background-color: #D8BFD8;
     float:left;
 }
-
+.btn{
+    margin-top: 10%;
+}
 .middle{
     text-align: center;
     width:50%;

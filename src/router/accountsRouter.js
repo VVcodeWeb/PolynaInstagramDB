@@ -5,16 +5,21 @@ const router = new express.Router
 const Account = require('../models/accountModel')
 const { handlebars } = require('hbs')
 
-/* TODO:Rework router, add /database/search?query */
 /* TODO: Sorting!*/
+/** 
+ * DB
+*/
 router.get('/database', async(req, res) => {
-    await Account.find({}, function (err, accounts) {
+    try{await Account.find({}, function (err, accounts) {
         res.render('viewDB', {accounts:accounts})
-    })
+    })}catch(e){
+        res.status(400).send(e)
+    }
 })
 
 router.get('/database/search', async(req, res) => {
-    if(req.query.url){
+    try{
+        if(req.query.url){
         const accounts = []
         const account = await Account.findOne({url: req.query.url})
         accounts[0] = account
@@ -27,10 +32,34 @@ router.get('/database/search', async(req, res) => {
         await Account.find({}, function (err, accounts) {
             res.render('viewDB', {accounts:accounts})
         })
+    }} catch(e){
+        res.status(400).send(e)
     }
 })
 
-router.delete('/database/account', async(req, res) =>{
+
+
+/** 
+ * Account
+ * 
+*/
+
+router.get('/account', async(req, res) => {
+    try {
+        if(req.query.url){
+            console.log(req.query.url)
+            const account = await Account.findOne({url: req.query.url})
+            if(account)
+                res.render('account', {account:account})
+            else   
+                res.status(404).send("lul")
+        }
+    } catch (e) {
+        res.status(404).send(e)
+    }
+})
+
+router.delete('/account', async(req, res) =>{
     try{
         if(req.query.url){
             const deleted = await (await Account.deleteOne({url: req.query.url})).deletedCount
@@ -44,7 +73,7 @@ router.delete('/database/account', async(req, res) =>{
     }
 })
 
-router.post('/database/account', async(req, res) => {
+router.post('/account', async(req, res) => {
     const account = createAccount(req.body)
     try {
         await account.save()

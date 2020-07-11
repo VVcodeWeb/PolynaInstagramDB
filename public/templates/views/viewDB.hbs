@@ -1,33 +1,28 @@
+<link rel="stylesheet" type="text/css" href="/static/css/theme.default.css">
 <link rel="stylesheet" type="text/css" href="/static/css/viewDB.css">
 {{>header}}
 
 <body>
     <div class="header_db">
         <h1>welcome to DB</h1>
-        <a href="/">
-            <h3 class="linkInDB toMain">Main Page</h3>
-        </a>
-        <a href="/addaccount">
-            <h3 class="linkInDB linkToAdd">Add new accounts</h3>
-        </a>
+        <a href="/"><h3 class="linkInDB toMain">Main Page</h3></a>
+        <a href="/addaccount"><h3 class="linkInDB linkToAdd">Add new accounts</h3></a>
         <div class="search">
             <form class="finder form-inline" action="/database/search?:url" method="get">
-                <input class="form-control" type="text" name="url" id="url" placeholder="Enter URL">
+                <input class="form-control" type="text" name="url" id="url" placeholder="Enter URL" required>
                 <button class="find btn btn-dark" type="submit">Find Account</button>
             </form>
             <form class="finder form-inline" action="/database/search?:theme" method="get">
-                <input class="form-control" type="text" name="theme" id="theme" placeholder="Enter theme">
+                <input class="form-control" type="text" name="theme" id="theme" placeholder="Enter theme" required>
                 <button class="find btn btn-dark" type="submit">Find Accounts</button>
             </form>
             <div class="finder viewDBB">
                 <a href="/database"><button class="btn btn-dark" type="submit">View DB</button></a>
             </div>
-
         </div>
-
     </div>
 
-    <table class="mainTable table table-striped table-bordered">
+    <table id="datatableDB" class="mainTable table table-striped table-bordered">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">ID</th>
@@ -41,10 +36,10 @@
                 <th scope="col">% ЦА с нужным полом</th>
                 <th scope="col">% ЦА с нужным возрастом</th>
                 <th scope="col">ЦА</th>
-                <th scope="col">costReachTA</th>
-                <th scope="col">costReach</th>
+                <th scope="col">Цена Охвата ЦА</th>
+                <th scope="col">Цена Охвата</th>
                 <th scope="col">Стоимость Подписчика</th>
-                <th scope="col">addition</th>
+                <th scope="col">Действия</th>
             </tr>
             </thread>
         <tbody>
@@ -66,7 +61,7 @@
                 <th>{{this.subscriberCost}}</th>
                 <th>
                     <div class="addition">
-                        <img class="imgInAddition" onclick="submitForm('{{this.url}}')" src="/static/img/trash.png" alt="del">
+                        <img class="imgInAddition" onclick="submitDeleteForm('{{this.url}}')" src="/static/img/trash.png" alt="del">
                         <img class="imgInAddition" onclick="displayMsg('{{this.description}}', 'false')" src="/static/img/comment.png" alt="com">
                     </div>
                 </th>
@@ -86,5 +81,6 @@
 </body>
 <script src="/static/js/jquery-3.5.1.min.js"></script>
 <script src="/static/js/viewDB.js"></script>
+<script src="/static/js/jquery.tablesorter.js"></script>
 
 {{>footer}}
