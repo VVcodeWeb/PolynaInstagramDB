@@ -1,2 +1,2 @@
 # PolynaInstagramDB
-TODO: Authentication
+TODO: Authentication, rework Front-end
