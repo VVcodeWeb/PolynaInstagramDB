@@ -1,18 +1,37 @@
 {{>header}}
 
 <body>
+    <div id="page-preloader"><span class="spinner"></span></div>
     <div class="main_container">
-        <div class="welcome_msg">
-            <h1 class="title">Polya, thats for tebya</h1>
+        <div class="leftSide">
+            <div class="wrapper">
+                <div class="welcome_msg">
+                    <h1 class="title"><span class="left_heart">&#10084</span> Polya, thats for tebya &#10084</h1>
+                </div>
+                <div class="login_form">
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password"
+                                placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary link login_button">Login</button>
+                    </form>
+                </div>
+                <div class="guest_mode">
+                    <label class="label_guest_mode" for="guest_mode_link">If you just want to take a look at DB</label>
+                    <a class="link" id="guest_mode_link" href="/database">
+                        <h3>Guest mode</h3>
+                    </a>
+                </div>
+            </div>
+
         </div>
-        <div class="links">
-            <a class="link" href="/addaccount">
-                <h3 class="h3InLinks">Move to add accounts</h3>
-            </a>
-            <a class="link" href="/database">
-                <h3 class="h3InLinks">Move to DB</h3>
-            </a>
-        </div>
+        <div class="rightSide"></div>
 
 
     </div>

@@ -11,5 +11,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
     <link rel="shortcut icon"  type="image/x-icon" href="/static/img/favicon.ico">
+    <style>
+        #page-preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 100500;
+        }
+
+        #page-preloader .spinner {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: url('/static/img/preloader.gif') no-repeat 50% 50%;
+            margin: -16px 0 0 -16px;
+        }
+    </style>
     <title>Polya</title>
 </head>

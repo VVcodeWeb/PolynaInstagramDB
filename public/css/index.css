@@ -9,40 +9,105 @@ h1{
     font-family: 'Yellowtail', cursive;
 }
 /* main page */
-.main_container {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    text-align: center;
-    background-image: url('../img/background.jpg');
-
+.main_container{
+    margin: auto;
 }
 
+.rightSide{
+    height: 100vh;
+    width: 70%;
+    background-image: url("/static/img/background.jpg");
+    margin-left: 30%;
+}
+
+
+.leftSide{
+    text-align: left;
+    margin: auto;
+    height : 100vh;
+    width: 30%;
+    float: left;
+    background-color: #D8BFD8;
+}
+
+.wrapper{
+    margin: 50px 0px 50px 42px;
+}
 
 .welcome_msg{
-    margin: 10% 15%;
-    padding: 1%;
-    display: inline-block;
-    text-align: center;
-    background-color: rgba(0,0,0,0.5);
-}
-.title {
-    color: white;
-    font-size: 5rem;
-}
-
-.link{
-    position: relative;
-    color: white;
-    margin: 6%;
-    padding: 5px;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-size: 24px;
+    margin-top: 48px;
+    margin-bottom: 24px;
+    color: rgb(33, 49, 60);
+    letter-spacing: 0.03em
 }
 
-.link:hover{
-    color: orange;
+.login_button{
+    margin-top: 5%;
 }
-.h3InLinks{
-    display: inline;
+
+.login_button:hover{
+    color: #0056b3;
+
+}
+
+.login_form{
+    margin-top: 35%;
+    margin-bottom: 24px; 
+}
+
+.form-control{
+    width: 75%;
+
+}
+
+.link {
+	box-shadow:inset 0px 1px 0px 0px #e184f3;
+	background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+	background-color:#c123de;
+	border-radius:6px;
+	border:1px solid #a511c0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #9b14b3;
+}
+.link:hover {
+	background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+    background-color:#a20dbd;
+    border-color: #000000;
+}
+.link:active {
+	position:relative;
+	top:1px;
+}
+.label_guest_mode{
+    display: block;
+    margin-bottom: 5px;
+}
+.guest_mode{
+    margin-top: 10%;
+}
+
+
+@media (max-width: 1500px){
+    .link{
+        margin-top: 10%;
+    }
+    .left_heart{
+        display: none;
+    }
 }
 
 

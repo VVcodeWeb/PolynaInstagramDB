@@ -4,6 +4,7 @@ const hbs = require('hbs')
 require('./db/mongoose')
 const accountRouter = require('./router/accountsRouter')
 const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 
 const app = express()
 
@@ -14,6 +15,7 @@ app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
+app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended:true}))
 //app.use(express.static(path.join(__dirname, '../public')))
 app.use('/static', express.static('public'))
