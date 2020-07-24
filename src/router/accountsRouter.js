@@ -1,18 +1,17 @@
-const react = require("react")
-const ReactDOM = require("react-dom")
 const express = require('express')
 const router = new express.Router
 const Account = require('../models/accountModel')
 const { handlebars } = require('hbs')
 
-/* TODO: Sorting!*/
 /** 
  * DB
 */
 router.get('/database', async(req, res) => {
-    try{await Account.find({}, function (err, accounts) {
-        res.render('viewDB', {accounts:accounts})
-    })}catch(e){
+    try{
+        await Account.find({}, function (err, accounts) {
+            res.render('viewDB', {accounts:accounts})
+        })
+    }catch(e){
         res.status(400).send(e)
     }
 })

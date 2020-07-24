@@ -13,6 +13,8 @@ h1{
     margin: auto;
 }
 
+
+
 .rightSide{
     height: 100vh;
     width: 70%;
@@ -22,6 +24,9 @@ h1{
 
 
 .leftSide{
+    border-top:solid #e184f3 4px;
+    border-bottom:solid #e184f3 4px;
+    border-right:solid #e184f3 4px;
     text-align: left;
     margin: auto;
     height : 100vh;
@@ -62,7 +67,7 @@ h1{
     margin-bottom: 24px; 
 }
 
-.form-control{
+.form-control_index{
     width: 75%;
 
 }

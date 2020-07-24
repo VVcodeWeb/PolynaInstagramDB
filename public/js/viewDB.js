@@ -26,7 +26,7 @@ function displayMsg(msg, reloadAfter) {
 /**
  * <p> Pops up div with 2 buttons yes or no, if pressed yes sends delete request on server with given url
  * <p> After response recieved calls {@link displayMsg(result, true)}
- * @param {*} url is static, binded to corresponding url in the table 
+ * @param {*} url is binded to corresponding url in the table 
  */
 function submitDeleteForm(url){
     var divDelete = document.getElementById("hiddenDelete")

@@ -3,6 +3,7 @@ const express = require('express')
 const hbs = require('hbs')
 require('./db/mongoose')
 const accountRouter = require('./router/accountsRouter')
+const usersRouter = require('./router/usersRouter')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 //app.use(express.static(path.join(__dirname, '../public')))
 app.use('/static', express.static('public'))
 app.use(accountRouter)
+app.use(usersRouter)
 
 app.get('', (req, res) => {
     res.render("index")
