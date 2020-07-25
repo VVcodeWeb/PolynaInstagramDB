@@ -13,6 +13,9 @@ const userSchema = new mongoose.Schema({
         type:String,
         minlength: 4,
         trim:true
+    },
+    cookie:{
+        type:String
     }
 })
 /** 
@@ -33,8 +36,9 @@ userSchema.statics.findByEmailPassword = async(email, password) => {
 }
 
 userSchema.pre('save', async function(next){
-    if(this.isModified('password')){
-        this.password = await bcrypt.hash(user.password, 8)
+    const user = this
+    if(user.isModified('password')){
+        user.password = await bcrypt.hash(user.password, 8)
     }
     next()
 })
@@ -44,5 +48,8 @@ userSchema.pre('save', async function(next){
  * has {@link #findByEmailPassword(email, password)} method to find user in db
  */
 const User = mongoose.model('User', userSchema)
+
+
+
 
 module.exports = User
