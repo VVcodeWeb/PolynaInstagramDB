@@ -1,7 +1,9 @@
 {{>header}}
 
 <body>
-    <div id="page-preloader"><span class="spinner"></span></div>
+    <div id="page-preloader">
+        <div class="spinner"></div>
+    </div>
     <div class="main_container">
         <div class="leftSide">
             <div class="wrapper">
@@ -9,14 +11,14 @@
                     <h1 class="title"><span class="left_heart">&#10084</span> Polya, thats for tebya &#10084</h1>
                 </div>
                 <div class="login_form">
-                    <form>
+                    <form action="/users/login" method="POST">
                         <div class="form-group">
                             <label for="email">Email address</label>
-                            <input type="email" class="form-control form-control_index" id="email" placeholder="Enter email">
+                            <input type="email" class="form-control form-control_index" name="email" id="email" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control form-control_index" id="password"
+                            <input type="password" class="form-control form-control_index" name="password" id="password"
                                 placeholder="Password">
                         </div>
                         <button type="submit" class="btn btn-primary link login_button">Login</button>
@@ -31,7 +33,7 @@
                 <div class="footer">
                     <hr class="footer_hr">
                     <p>Created by V.V 2020</p>
-                    <a href="https://github.com/OnlyAltOne" target="blank"><img src="/static/img/github (1).png" alt="github"></a>
+                    <a class="github_icon" href="https://github.com/OnlyAltOne" target="blank"><img class="github_icon" src="/static/img/github.png" alt="github"></a>
                 </div>
             </div>
 
@@ -41,5 +43,5 @@
 
     </div>
 </body>
-
+<script src="/static/js/index.js"></script>
 {{>footer}}

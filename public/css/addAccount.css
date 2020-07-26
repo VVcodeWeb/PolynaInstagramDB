@@ -1,7 +1,7 @@
 .addAccBlocks{
     height: 120vh;
     width: 25%;
-    background-color: #D8BFD8;
+    background: linear-gradient(to right, #e66465, #9198e5);
     float:left;
 }
 .btn{
@@ -10,7 +10,7 @@
 .middle{
     text-align: center;
     width:50%;
-    background-color: #ffffff;
+    background: #ffffff;
 }
 .input{
     margin: 0 15%;

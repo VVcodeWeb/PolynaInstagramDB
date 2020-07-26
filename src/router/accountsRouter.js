@@ -60,6 +60,8 @@ router.get('/account', async(req, res) => {
 
 router.delete('/account', async(req, res) =>{
     try{
+        cookieId = req.cookies.id
+        console.log(req.cookies)
         if(req.query.url){
             const deleted = await (await Account.deleteOne({url: req.query.url})).deletedCount
             if(deleted == 0)

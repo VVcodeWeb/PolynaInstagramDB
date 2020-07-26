@@ -5,10 +5,11 @@
 <body>
     <div id="page-preloader"><span class="spinner"></span></div>
     <div class="header_db">
-        <h1>welcome to DB</h1>
-        <a href="/"><h3 class="linkInDB toMain">Main Page</h3></a>
-        <a href="/addaccount"><h3 class="linkInDB linkToAdd">Add new accounts</h3></a>
-        <div class="search">
+        <div class="wrapper_header">
+            <h1>Welcome to online database</h1>
+            <a href="/"><h3 class="linkInDB toMain">Main Page</h3></a>
+            <a href="/addaccount"><h3 class="linkInDB linkToAdd">Add new accounts</h3></a>
+            <div class="search">
             <form class="finder form-inline" action="/database/search?:url" method="get">
                 <input class="form-control" type="text" name="url" id="url" placeholder="Enter URL" required>
                 <button class="find btn btn-dark" type="submit">Find Account</button>
@@ -21,6 +22,8 @@
                 <a href="/database"><button class="btn btn-dark" type="submit">View DB</button></a>
             </div>
         </div>
+        </div>
+        
     </div>
 <!-- Content editable-->
     <table id="datatableDB" class="mainTable table table-striped table-bordered">

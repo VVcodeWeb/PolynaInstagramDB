@@ -13,10 +13,8 @@ const userSchema = new mongoose.Schema({
         type:String,
         minlength: 4,
         trim:true
-    },
-    cookie:{
-        type:String
     }
+  
 })
 /** 
  * <p>Method tries to find user first, if not throw error

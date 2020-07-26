@@ -2,20 +2,28 @@ $(function() {
     $("#datatableDB").tablesorter();
   });
 
+function showModal(id) {
+    $(id).fadeIn('slow');
+}
+
+function hideModal(id) {
+     $(id).fadeOut('slow');
+}  
+
 /** 
  * Display first given param, second param tells wether page should be uploaded after pressing closeButton 
  * @param reloadAfter string "true" means page will be reloaded, dont ask me why its not boolean
 */
 function displayMsg(msg, reloadAfter) {
-    var divComment = document.getElementById("hiddenComment")
-    divComment.style.display = "block"
+    var hidden_comment = document.getElementById('hiddenComment');
+    showModal(hidden_comment)
     if(msg){
         document.getElementById("hiddenP").innerHTML = msg
     } else {
         document.getElementById("hiddenP").innerHTML = "Нет информации"
     }
     document.getElementById("closeButton").addEventListener("click", function(){
-        divComment.style.display = "none"
+        hideModal(hidden_comment)
         if(reloadAfter == "true")
             location.reload()
    
@@ -29,8 +37,8 @@ function displayMsg(msg, reloadAfter) {
  * @param {*} url is binded to corresponding url in the table 
  */
 function submitDeleteForm(url){
-    var divDelete = document.getElementById("hiddenDelete")
-    divDelete.style.display = "block"
+    var div_delete = document.getElementById("hiddenDelete")
+    showModal(div_delete)
     document.getElementById("acceptButton").addEventListener("click", function(){
         $.ajax({
             url: `/account?url=${url}`,
@@ -42,9 +50,9 @@ function submitDeleteForm(url){
                 displayMsg(`${msg} +  ${error}`, 'false')
             }
         })
-        divDelete.style.display = "none"
+        hideModal(div_delete)
     })
     document.getElementById("declineButton").addEventListener("click", function(){
-        divDelete.style.display = "none"
+        hideModal(div_delete)
     })
 }
