@@ -9,17 +9,18 @@
             <h1>Welcome to online database</h1>
             <a href="/"><h3 class="linkInDB toMain">Main Page</h3></a>
             <a href="/addaccount"><h3 class="linkInDB linkToAdd">Add new accounts</h3></a>
+            <a href="/users/logout">logout</a>
             <div class="search">
             <form class="finder form-inline" action="/database/search?:url" method="get">
                 <input class="form-control" type="text" name="url" id="url" placeholder="Enter URL" required>
-                <button class="find btn btn-dark" type="submit">Find Account</button>
+                <button class="link find btn btn-dark" type="submit">Find Account</button>
             </form>
             <form class="finder form-inline" action="/database/search?:theme" method="get">
                 <input class="form-control" type="text" name="theme" id="theme" placeholder="Enter theme" required>
-                <button class="find btn btn-dark" type="submit">Find Accounts</button>
+                <button class="link find btn btn-dark" type="submit">Find Accounts</button>
             </form>
             <div class="finder viewDBB">
-                <a href="/database"><button class="btn btn-dark" type="submit">View DB</button></a>
+                <a href="/database"><button class="link btn btn-dark" type="submit">View DB</button></a>
             </div>
         </div>
         </div>

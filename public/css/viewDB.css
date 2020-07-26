@@ -1,6 +1,7 @@
 .header_db{
     position: relative;
-    background: linear-gradient(#9198e5, #e66465);
+    /*background: linear-gradient(#9198e5, #e66465); */
+    background: radial-gradient(50% 30% at bottom,#C12600,#e66465, #9198e5);
     text-align: center;
 }
 
@@ -9,6 +10,7 @@
     position: relative;
     z-index: 5;
 }
+
 .linkInDB{
     color:black;
     display: inline;
@@ -27,10 +29,18 @@
     margin-left: 1.5%;
 }
 .finder{
-    margin: 10px;
+    margin: 1.5% 10px;
 }
 .viewDBB{
     text-align: left;
+}
+
+.link{
+    background:radial-gradient(70% 70% at bottom right, #e66465, #9198e5) !important;
+}
+
+.link:hover{
+    background: radial-gradient(70% 70% at top left, #e66465, #9198e5) !important;;
 }
 
 #deleteButton{
@@ -108,4 +118,24 @@
     bottom: 0;
     left: 0;
 
+}
+
+
+@media (max-width: 1500px){
+    .link{
+        margin-top: 1% !important;
+    }
+    .left_heart{
+        display: none;
+    }
+}
+
+@media (max-width: 640px){
+    .linkInDB{
+        display: block;
+        margin: 5%;
+    }
+    .finder{
+        margin: 5% 10px;
+    }
 }

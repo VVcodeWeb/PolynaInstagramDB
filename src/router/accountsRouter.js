@@ -1,7 +1,6 @@
 const express = require('express')
 const router = new express.Router
 const Account = require('../models/accountModel')
-const { handlebars } = require('hbs')
 
 /** 
  * DB

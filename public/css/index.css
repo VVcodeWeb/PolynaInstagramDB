@@ -35,9 +35,6 @@ h1{
 
 
 .leftSide{
-    border-top:solid #e184f3 4px;
-    border-bottom:solid #e184f3 4px;
-    border-right:solid #e184f3 4px;
     text-align: left;
     margin: auto;
     height : 100vh;
@@ -92,7 +89,7 @@ h1{
 
 .link {
 	box-shadow:inset 0px 1px 0px 0px #e184f3;
-	background:linear-gradient(to bottom, #c123de 5%, #a20dbd 100%);
+	background:linear-gradient(to bottom, #9198e5  30%, #e66465 70%);
 	background-color:#c123de;
 	border-radius:6px;
 	border:1px solid #a511c0;
@@ -107,9 +104,10 @@ h1{
 	text-shadow:0px 1px 0px #9b14b3;
 }
 .link:hover {
-	background:linear-gradient(to bottom, #a20dbd 5%, #c123de 100%);
+	background:linear-gradient(to right, #e66465 5%, #9198e5 100%);
     background-color:#a20dbd;
     border-color: #000000;
+    color: #C7C4AE;
 }
 .link:active {
 	position:relative;
@@ -128,7 +126,7 @@ h1{
     text-align: center;
 }
 
-.footer_hr{
+.hr_line{
     width: 60%;
     margin: 2rem auto;
 }

@@ -1,7 +1,5 @@
 const express = require('express')
-const User = require('../models/userModel')
-const cookieParser = require('cookie-parser')
-const cookieSession = require('cookie-session')
+const User = require('../models/userModel');
 const router = new express.Router
 
 
@@ -22,6 +20,8 @@ router.post("/users", async(req, res) =>{
 router.post("/users/login", async(req, res) =>{
     try {
         const user = await User.findByEmailPassword(req.body.email, req.body.password)
+        const token = await user.generateAuthToken()
+        res.locals.token = token
         res.redirect("/database")   
     } catch (e) {
         res.status(404).send("error;")
@@ -29,6 +29,12 @@ router.post("/users/login", async(req, res) =>{
     
 })
 
-
+router.get("/users/logout", async(req, res) => {
+    try {
+      
+    } catch (e) {
+        res.status(422).send(`${e}. Error occured in deleting stage`)
+    }
+})
 
 module.exports = router

@@ -1,8 +1,17 @@
 .addAccBlocks{
     height: 120vh;
     width: 25%;
-    background: linear-gradient(to right, #e66465, #9198e5);
     float:left;
+}
+
+.right_one{
+    background: linear-gradient(to right, #e66465, #9198e5);
+}
+.left_one{
+    background: linear-gradient(to left, #e66465, #9198e5);
+}
+.link:hover{
+    background: linear-gradient(to top, #9198e5  30%, #e66465 70%) !important;
 }
 .btn{
     margin-top: 10%;
