@@ -11,16 +11,16 @@
                     <h1 class="title"><span class="left_heart">&#10084</span> Polya, thats for tebya &#10084</h1>
                     <hr class="hr_line">
                 </div>
-                <div class="login_form">
+                <div class="login_form" id="content_under_welcome_msg">
                     <form action="/users/login" method="POST">
                         <div class="form-group">
                             <label for="email">Email address</label>
-                            <input type="email" class="form-control form-control_index" name="email" id="email" placeholder="Enter email">
+                            <input type="email" class="form-control form-control_index" name="email" id="email" placeholder="Enter email" required="true">
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control form-control_index" name="password" id="password"
-                                placeholder="Password">
+                                placeholder="Password" required="true">
                         </div>
                         <button type="submit" class="btn btn-primary link login_button">Login</button>
                     </form>
@@ -28,7 +28,7 @@
                 <div class="guest_mode">
                     <label class="label_guest_mode" for="guest_mode_link">If you just want to take a look at DB</label>
                     <a class="link" id="guest_mode_link" href="/database">
-                        <h3>Guest mode</h3>
+                        <h4 class="guest_mode_text">Guest mode</h4>
                     </a>
                 </div>
                 <div class="footer">

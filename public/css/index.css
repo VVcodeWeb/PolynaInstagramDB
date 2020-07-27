@@ -14,6 +14,7 @@ h1{
 }
 
 
+/* Width of screen becomes lower = increase width % of left side and decrease width % of right! With animejs  */
 
 .rightSide{
     position: relative;
@@ -45,7 +46,7 @@ h1{
 }
 
 .wrapper{
-    margin: 50px 0px 50px 42px;
+    margin: 50px 0px 0px 42px;
 }
 
 .welcome_msg{
@@ -130,6 +131,9 @@ h1{
     width: 60%;
     margin: 2rem auto;
 }
+.left_heart{
+    display: none !important;
+}
 
 @media (max-width: 1500px){
     .link{
@@ -137,6 +141,28 @@ h1{
     }
     .left_heart{
         display: none;
+    }
+    
+}
+
+@media (max-width: 750px){
+    .login_form{
+        margin-top: 25%;
+    }
+    .rightSide{
+        display: none;
+    }
+    .leftSide{
+        width: 100%;
+    }
+    .guest_mode_text{
+        font-size: 20px !important;
+    }
+    #guest_mode_link{
+        padding: 3px 12px !important;
+    }
+    .footer{
+        margin-top: 0;
     }
 }
 

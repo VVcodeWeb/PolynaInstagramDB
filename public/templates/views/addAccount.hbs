@@ -4,6 +4,10 @@
 <body>
     <div id="page-preloader"><span class="spinner"></span></div>
     <div class="wrapContainer">
+        <div id="hiddenCommenta">
+            <p id="hiddenPa"></p>
+            <button class="rightButton btn btn-dark" id="closeButton" type="submit">Закрыть</button>
+        </div>
         <div class="addAccBlocks left_one"></div>
         <div class="addAccBlocks middle">
             <div class="header-navbar">
@@ -13,61 +17,62 @@
             </div>
             <hr>
             <div class="input">
-                <form action="/account" method="post">
+                <form action="/account" id="form_add_account" method="post">
                     <div class="form-group">
                         <label for="instaURL">Ссылка на аккаунт</label>
                         <input type="url" class="form-control" name="url" id="instaURL" aria-describedby="urlLove"
-                            autocomplete="off">
+                            autocomplete="off"required="true">
                         <small id="urlLove" class="form-text text-muted">love u</small>
                     </div>
                     <div class="form-group">
                         <label for="theme">Тематика</label>
-                        <input type="text" class="form-control" name="theme" id="theme" autocomplete="off">
+                        <input type="text" class="form-control" name="theme" id="theme" autocomplete="off"required="true">
                     </div>
                     <div class="form-group">
                         <label for="product">Продукт</label>
-                        <input type="text" class="form-control" name="product" id="product" autocomplete="off">
+                        <input type="text" class="form-control" name="product" id="product" autocomplete="off"required="true">
                     </div>
                     <div class="form-group">
                         <label for="reach">Охват</label>
-                        <input type="text" class="form-control" name="reach" id="reach" autocomplete="off">
+                        <input type="text" class="form-control" name="reach" id="reach" autocomplete="off"required="true">
                     </div>
                     <div class="form-group">
                         <label for="cost">Стоимость размещения</label>
-                        <input type="text" class="form-control" name="cost" id="cost" autocomplete="off">
+                        <input type="text" class="form-control" name="cost" id="cost" autocomplete="off"required="true">
                     </div>
                     <div class="form-group">
                         <label for="subscribersIncome">Средний приход подписчиков</label>
                         <input type="text" class="form-control" name="subscribersIncome" id="subscribersIncome"
-                            autocomplete="off">
+                            autocomplete="off"required="true">
                     </div>
                     <div class="form-group">
                         <label for="percentTAgeo">% ЦА с нужной гео</label>
                         <input type="text" class="form-control" name="percentTAgeo" id="percentTAgeo"
-                            autocomplete="off">
+                            autocomplete="off"required="true">
                     </div>
                     <div class="form-group">
                         <label for="percentTAsex">% ЦА с нужным полом</label>
                         <input type="text" class="form-control" name="percentTAsex" id="percentTAsex"
-                            autocomplete="off">
+                            autocomplete="off" required="true">
                     </div>
                     <div class="form-group">
                         <label for="percentTAage">% ЦА с нужным возрастом</label>
                         <input type="text" class="form-control" name="percentTAage" id="percentTAage"
-                            autocomplete="off">
+                            autocomplete="off"required="true">
                     </div>
                     <div class="form-group">
                         <label for="description">Коментарий</label>
                         <input type="text" class="form-control" name="description" id="description"
-                            autocomplete="off">
+                            autocomplete="off"required="true">
                     </div>
-                    <button type="submit" class="link btn btn-dark">Submit</button>
+                    <button type="submit" id="add_account_button" class="link btn btn-dark">Submit</button>
                 </form>
+                
             </div>
         </div>
         <div class="addAccBlocks right_one"></div>
     </div>
 
 </body>
-
+<script src= "/static/js/addAccount.js"></script>
 {{>footer}}

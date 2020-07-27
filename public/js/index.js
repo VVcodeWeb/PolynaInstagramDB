@@ -1,3 +1,19 @@
+/** 
+ * Need to create ajax request for login form
+ * 
+ * 
+*/
+
+
+$.ajax({
+    
+})
+
+
+
+
+
+
 var textWrapper = document.querySelector('.title')
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>")
 var wrapper = document.querySelector('.wrapper')

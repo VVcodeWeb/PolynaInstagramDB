@@ -56,3 +56,4 @@ function submitDeleteForm(url){
         hideModal(div_delete)
     })
 }
+

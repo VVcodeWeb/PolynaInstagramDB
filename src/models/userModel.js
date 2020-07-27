@@ -22,6 +22,11 @@ const userSchema = new mongoose.Schema({
     }]
   
 })
+
+/**
+ * TODO> TTL TOKENS IN DB
+ */
+
 /** 
  * <p>Method tries to find user first, if not throw error
  * <p>Compare password from user and given one, throw error

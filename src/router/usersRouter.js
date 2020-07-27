@@ -3,10 +3,10 @@ const User = require('../models/userModel');
 const router = new express.Router
 
 
-/** 
- * 
- * TODO: need to create generate cookie function
-*/
+/*------- Users -------*/
+
+
+
 router.post("/users", async(req, res) =>{
     const user = new User(req.body)
     try {
@@ -21,14 +21,19 @@ router.post("/users/login", async(req, res) =>{
     try {
         const user = await User.findByEmailPassword(req.body.email, req.body.password)
         const token = await user.generateAuthToken()
-        res.locals.token = token
+        res.cookie('token', token, {maxAge: 60*60*1000, httpOnly: true})
         res.redirect("/database")   
     } catch (e) {
-        res.status(404).send("error;")
+        res.status(404).send(e)
     }
     
 })
 
+
+/** 
+ * finish logout
+ * 
+*/
 router.get("/users/logout", async(req, res) => {
     try {
       

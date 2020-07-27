@@ -1,10 +1,9 @@
 const express = require('express')
 const router = new express.Router
 const Account = require('../models/accountModel')
+const auth = require('../middleware/auth')
+/*------- Database -------*/
 
-/** 
- * DB
-*/
 router.get('/database', async(req, res) => {
     try{
         await Account.find({}, function (err, accounts) {
@@ -37,30 +36,29 @@ router.get('/database/search', async(req, res) => {
 
 
 
-/** 
- * Account
- * 
-*/
+/*------- Accounts -------*/
 
+
+
+/** 
+ * fix error cathing
+*/
 router.get('/account', async(req, res) => {
     try {
         if(req.query.url){
-            console.log(req.query.url)
             const account = await Account.findOne({url: req.query.url})
             if(account)
                 res.render('account', {account:account})
             else   
-                res.status(404).send("lul")
+                res.status(404).send("testMode")
         }
     } catch (e) {
-        res.status(404).send(e)
+        res.status(400).send(e)
     }
 })
 
-router.delete('/account', async(req, res) =>{
+router.delete('/account', auth, async(req, res) =>{
     try{
-        cookieId = req.cookies.id
-        console.log(req.cookies)
         if(req.query.url){
             const deleted = await (await Account.deleteOne({url: req.query.url})).deletedCount
             if(deleted == 0)
@@ -69,11 +67,11 @@ router.delete('/account', async(req, res) =>{
                 res.send("Отлично, аккаунт удалён")
         }
     }catch(e){
-        res.status(404).send(e)
+        res.status(400).send(e)
     }
 })
 
-router.post('/account', async(req, res) => {
+router.post('/account', auth, async(req, res) => {
     const account = createAccount(req.body)
     try {
         await account.save()
