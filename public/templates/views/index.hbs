@@ -5,14 +5,14 @@
         <div class="spinner"></div>
     </div>
     <div class="main_container">
-        <div class="leftSide">
+        <div class="leftSide" id="left_side">
             <div class="wrapper">
                 <div class="welcome_msg">
-                    <h1 class="title"><span class="left_heart">&#10084</span> Polya, thats for tebya &#10084</h1>
+                    <h1 class="title"><span class="hearts">&#10084</span> Polya, thats for tebya <span class="hearts">&#10084</span></h1>
                     <hr class="hr_line">
                 </div>
-                <div class="login_form" id="content_under_welcome_msg">
-                    <form action="/users/login" method="POST">
+                <div class="login_form" id="test_id">
+                    <form action="/users/login" method="POST" id="login_form_ajax">
                         <div class="form-group">
                             <label for="email">Email address</label>
                             <input type="email" class="form-control form-control_index" name="email" id="email" placeholder="Enter email" required="true">
@@ -22,6 +22,7 @@
                             <input type="password" class="form-control form-control_index" name="password" id="password"
                                 placeholder="Password" required="true">
                         </div>
+                        <p id="information_under_login_form" style="color: #FF0000; font:bold;"></p>
                         <button type="submit" class="btn btn-primary link login_button">Login</button>
                     </form>
                 </div>
@@ -33,7 +34,7 @@
                 </div>
                 <div class="footer">
                     <hr class="hr_line">
-                    <p>Created by V.V 2020</p>
+                    <p>Created(actually still in the works) by V.V 2020</p>
                     <a class="github_icon" href="https://github.com/OnlyAltOne" target="blank"><img class="github_icon" src="/static/img/github.png" alt="github"></a>
                 </div>
             </div>

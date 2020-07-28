@@ -38,11 +38,6 @@ router.get('/database/search', async(req, res) => {
 
 /*------- Accounts -------*/
 
-
-
-/** 
- * fix error cathing
-*/
 router.get('/account', async(req, res) => {
     try {
         if(req.query.url){
@@ -50,7 +45,7 @@ router.get('/account', async(req, res) => {
             if(account)
                 res.render('account', {account:account})
             else   
-                res.status(404).send("testMode")
+                res.status(404)
         }
     } catch (e) {
         res.status(400).send(e)

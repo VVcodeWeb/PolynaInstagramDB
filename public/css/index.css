@@ -1,6 +1,12 @@
+/* You can use html, body { height: 100% } for a 100vh solution across devices. */
+
 * {
     padding: 0;
     margin: 0;   
+}
+
+html, body{
+    height: 100%;
 }
 a:link{
     text-decoration: none;
@@ -19,6 +25,7 @@ h1{
 .rightSide{
     position: relative;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 70%;
     background-image: url("/static/img/background.jpg");
     margin-left: 30%;
@@ -39,6 +46,7 @@ h1{
     text-align: left;
     margin: auto;
     height : 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     width: 30%;
     float: left;
     background: linear-gradient(to left, #e66465, #9198e5);
@@ -63,11 +71,11 @@ h1{
     letter-spacing: 0.03em
 }
 
+
 .welcome_msg .letter {
     display: inline-block;
     line-height: 1em;
   }
-
 
 .login_button{
     margin-top: 5%;
@@ -139,15 +147,40 @@ h1{
     .link{
         margin-top: 10%;
     }
-    .left_heart{
-        display: none;
+    .hearts{
+        display: none !important;
     }
     
 }
 
-@media (max-width: 750px){
+@media(max-height: 830px){
     .login_form{
-        margin-top: 25%;
+        margin-top: 5% !important;
+    }
+    .hr_line{
+        margin: 0.5rem auto;
+    }
+    .letter{
+        font-size: 2rem;
+    }
+    .link{
+        margin-top: 5%;
+    }
+}
+
+
+@media (max-width: 1000px){
+    .login_form{
+        margin-top: 10%;
+    }
+    .login_button{
+        margin-top: 2.5%;
+    }
+    .welcome_msg{
+        text-align: center;
+    }
+    .form-control_index{
+        width: 40%;
     }
     .rightSide{
         display: none;
@@ -160,6 +193,7 @@ h1{
     }
     #guest_mode_link{
         padding: 3px 12px !important;
+        margin-top: 2.5%;
     }
     .footer{
         margin-top: 0;

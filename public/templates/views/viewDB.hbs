@@ -10,7 +10,7 @@
             <h1>Welcome to online database</h1>
             <a href="/"><h3 class="linkInDB toMain">Main Page</h3></a>
             <a href="/addaccount"><h3 class="linkInDB linkToAdd">Add new accounts</h3></a>
-            <a href="/users/logout">logout</a>
+            <button type="link" id="logout_button">Logout</button>
             <div class="search">
             <form class="finder form-inline" action="/database/search?:url" method="get">
                 <input class="form-control" type="text" name="url" id="url" placeholder="Enter URL" required>
@@ -49,6 +49,7 @@
             </tr>
             </thread>
         <tbody>
+            <!--TODO: If accounts array is empty it still renders 0-th empty element with comment and delete button => fix-->
             {{#each accounts}}
             <tr>
                 <th scope="row">{{@index}}</th>

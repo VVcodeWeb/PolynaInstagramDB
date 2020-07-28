@@ -1,11 +1,9 @@
 /** 
- * Need to rewrite listeners for buttons
- * Need to add pop up login window
+ * Need to rewrite listeners for buttons in jQuery format
+ * Need to add pop up login window(needed?)
  * Need to optimize code and check if its possible not to write displayMsg and etc twice!
  * 
 */
-
-
 
 $(document).ready(function() {
     function showModal(id) {
@@ -35,7 +33,6 @@ function displayMsg(msg, reloadAfter) {
 $("#form_add_account").submit(function (event){
     event.preventDefault()
 
-    console.log("straight after submit")
     var $form = $(this)
     var url_request = $form.attr('action')
 
@@ -53,13 +50,11 @@ $("#form_add_account").submit(function (event){
     })
 
     posting.done(function (data){
-        console.log("lolad")
         displayMsg(data, "false")
     })
 
     posting.fail(function (data){
         displayMsg("cant", "false")
-        console.log("lol")
     })
 })
 

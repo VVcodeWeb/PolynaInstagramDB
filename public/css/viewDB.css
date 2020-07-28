@@ -5,7 +5,9 @@
     text-align: center;
 }
 
-
+#logout_button{
+    display: none;
+}
 .wrapper_header{
     position: relative;
     z-index: 5;
