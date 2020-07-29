@@ -1,26 +1,41 @@
 .header_db{
     position: relative;
-    /*background: linear-gradient(#9198e5, #e66465); */
-    background: radial-gradient(50% 30% at bottom,#C12600,#e66465, #9198e5);
+    background:  #9198e5;
     text-align: center;
 }
 
-#logout_button{
-    display: none;
+
+.logout{
+    float: right;
+    padding: 5%;
+}
+
+.nav_links{
+    text-align: center;
 }
 .wrapper_header{
     position: relative;
     z-index: 5;
 }
+#logout_button{
+    display: none;
+    background:radial-gradient(70% 70% at bottom left, #e66465, #9198e5) !important;
 
-.linkInDB{
-    color:black;
-    display: inline;
-    margin: 10%;
 }
-.linkInDB:hover{
-    color:#FF851B;
+#main_page_link{
+    display: inline-block;
+    background:radial-gradient(70% 70% at bottom, #e66465, #9198e5) !important;
+    margin: 1rem;
 }
+
+#add_acc_link{
+    margin: 1rem;
+    display: inline-block;
+    background:radial-gradient(70% 70% at bottom, #e66465, #9198e5) !important;
+
+}
+
+
 .mainTable{
     margin-bottom: 2rem;
 }

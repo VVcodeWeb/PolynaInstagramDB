@@ -18,11 +18,11 @@ function displayMsg(msg, reloadAfter) {
     var hidden_comment = $('#hiddenCommenta');
     showModal(hidden_comment)
     if(msg){
-        $("#hiddenPa").innerHTML = msg
+        $("#hiddenPa").text(msg)
     } else {
-       $("#hiddenPa").innerHTML = "Нет информации"
+        $("#hiddenPa").text("Нет информации")
     }
-    $("#closeButton").addEventListener("click", function(){
+    $("#closeButton").on("click", function(){
         hideModal(hidden_comment)
         if(reloadAfter == "true")
             location.reload()
@@ -54,7 +54,8 @@ $("#form_add_account").submit(function (event){
     })
 
     posting.fail(function (data){
-        displayMsg("cant", "false")
+        console.log(data)
+        displayMsg(data.responseJSON.error, "false")
     })
 })
 

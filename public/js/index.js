@@ -23,34 +23,15 @@ $(document).ready(function () {
         url: "/users/status",
         type: "get",
         success: function(){
-            $("#test_id").css("display", "none")
+            $("#login_form_id").css("display", "none")
             $('.label_guest_mode').css("display", "none")
             $(".guest_mode_text").text("To database")
             $(".guest_mode").css("text-align", "center")
+        },
+        error: function(){
+
         }
     })
-    
-    /*   var oldWidth = window.innerWidth;
-    var left_side = $("#left_side")
-    console.log(left_side.style)
-    
-    var onResizeFunction = function () {
-        var newWidth = window.innerWidth
-        console.log(left_side.style.width);
-        if (Math.abs(newWidth - oldWidth) >= 50) {
-        anime({
-            target: left_side,
-            delay: 1000,
-            begin: function () {
-            left_side.style.width = left_side.width + newWidth - oldWidth;
-            },
-        });
-        oldWidth = newWidth;
-
-    }
-  };
-  $(window).on("load resize", onResizeFunction); */
-
 
     /** 
    * Animation of welcome_msg and form(appears from left)
@@ -69,7 +50,7 @@ $(document).ready(function () {
         easing: "linear",
         duration: 750
     });
-
+    
     anime({
         targets: ".wrapper",
         translateX: [

@@ -16,8 +16,13 @@ const userSchema = new mongoose.Schema({
     }, 
     tokens: [{
         token:{
-            createdAt: { type: Date, expires: '2m', default: Date.now },
-            type:String
+            createAt: {
+                type: Date,
+                default: Date.now(),
+                index: { expires: 60*1 }
+            },
+            type:String,
+            timestamps: true
         }
     }]
   
@@ -48,6 +53,7 @@ userSchema.methods.generateAuthToken = async function (){
     const user = this
     const token = jwt.sign({ _id: user._id.toString()}, process.env.JWT_SECRET, { expiresIn: 60 * 60 })
     user.tokens = user.tokens.concat({ token })
+    user.tokens[0].createAt = Date.now()
     await user.save()
     
     return token

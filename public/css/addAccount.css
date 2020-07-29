@@ -7,6 +7,10 @@ html body{
     width: 25%;
     float:left;
 }
+.nav_links_add{
+    background: linear-gradient(to left, #e66465, #9198e5 50%, #e66465) !important;
+    margin: 2rem;
+}
 .wrapContainer{
     height: 100%;
 }
@@ -31,13 +35,16 @@ html body{
 .input{
     margin: 0 15%;
 }
-.linkInAcc{
-    color:black;
-    display: inline;
+.rightButton{
+    margin-bottom: 15px;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 200px;
 }
-.linkInAcc:hover{
-    color:#FF851B;
-}
+
 .toMain{
     padding-right: 10%;
 }
@@ -75,6 +82,11 @@ html body{
 
 @media (max-width: 600px){
     .addAccBlocks{
-        height: 150vh;
+        display: none
     }
+    .middle{
+        width: 100%;
+        display: block;
+    }
+
 }
