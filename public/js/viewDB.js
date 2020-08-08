@@ -51,7 +51,10 @@ function submitDeleteForm(url) {
 $(document).ready(function () {
     $("#datatableDB").tablesorter();
     $(".imgInAddition").on("click", function (event) {
-        console.log("hello")
+        if($(this).attr("data-url")){
+            submitDeleteForm($(this).attr("data-url"))
+        } else 
+            displayMsg($(this).attr("data-description"), "noe")
     })
     $.ajax({
         url: "/users/status",
