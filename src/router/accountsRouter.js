@@ -17,10 +17,8 @@ router.get('/database', async(req, res) => {
 router.get('/database/search', async(req, res) => {
     try{
         if(req.query.url){
-        const accounts = []
         const account = await Account.findOne({url: req.query.url})
-        accounts[0] = account
-        res.render('viewDB', {accounts:accounts})
+        res.render('viewDB', {accounts:account})
     } else if(req.query.theme){
         await Account.find({theme: req.query.theme}, function(err, accounts){
             res.render('viewDB', {accounts: accounts})

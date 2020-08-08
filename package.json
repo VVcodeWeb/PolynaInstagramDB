@@ -6,7 +6,8 @@
   "scripts": {
     "testDoc": "jsdoc --help",
     "start": "node src/index.js",
-    "dev": "env-cmd -f config/dev.env nodemon src/index.js -e js hbs css"
+    "dev": "env-cmd -f config/dev.env nodemon src/index.js -e js hbs css",
+    "build": "webpack --config webpack.config.js"
   },
   "author": "V.V",
   "license": "ISC",
@@ -28,10 +29,12 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "uuid": "^8.2.0",
-    "validator": "^13.1.1"
+    "validator": "^13.1.1",
+    "webpack": "^4.44.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack-cli": "^3.3.12"
   },
   "repository": {
     "type": "git",

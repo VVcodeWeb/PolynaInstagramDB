@@ -28,10 +28,6 @@ const userSchema = new mongoose.Schema({
   
 })
 
-/**
- * TODO> TTL TOKENS IN DB
- */
-
 /** 
  * <p>Method tries to find user first, if not throw error
  * <p>Compare password from user and given one, throw error
@@ -67,10 +63,6 @@ userSchema.pre('save', async function(next){
     next()
 })
 
-/**
- * Model contains email and password
- * has {@link #findByEmailPassword(email, password)} method to find user in db
- */
 const User = mongoose.model('User', userSchema)
 
 

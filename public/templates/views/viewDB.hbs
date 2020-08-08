@@ -54,7 +54,6 @@
             </tr>
             </thread>
         <tbody>
-            <!--TODO: If accounts array is empty it still renders 0-th empty element with comment and delete button => fix-->
             {{#each accounts}}
             <tr>
                 <th scope="row">{{@index}}</th>
@@ -73,8 +72,8 @@
                 <th>{{this.subscriberCost}}</th>
                 <th>
                     <div class="addition">
-                        <img class="imgInAddition" onclick="submitDeleteForm('{{this.url}}')" src="/static/img/trash.png" alt="del">
-                        <img class="imgInAddition" onclick="displayMsg('{{this.description}}', 'false')" src="/static/img/comment.png" alt="com">
+                        <img class="imgInAddition" data-url:"{{this.url}}" src="/static/img/trash.png" alt="del">
+                        <img class="imgInAddition" data-description: "{{this.description}}", src="/static/img/comment.png" alt="com">
                     </div>
                 </th>
             </tr>
@@ -91,8 +90,7 @@
         <button class="leftButton btn btn-danger" id="declineButton">НЕТ</button>
     </div>
 </body>
-<script src="/static/js/jquery.tablesorter.js"></script>
-<script src="/static/js/viewDB.js"></script>
+<script src="/static/dist/viewDB.js"></script>
 
 
 {{>footer}}
