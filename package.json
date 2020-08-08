@@ -4,10 +4,8 @@
   "description": "Database for Polya",
   "main": "index.js",
   "scripts": {
-    "testDoc": "jsdoc --help",
     "start": "node src/index.js",
-    "dev": "env-cmd -f config/dev.env nodemon src/index.js -e js hbs css",
-    "build": "webpack --config webpack.config.js"
+    "dev": "env-cmd -f config/dev.env nodemon src/index.js -e js hbs css"
   },
   "author": "V.V",
   "license": "ISC",
@@ -25,16 +23,10 @@
     "jquery": "^3.5.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.20",
-    "npm-install-all": "^1.1.21",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "uuid": "^8.2.0",
-    "validator": "^13.1.1",
-    "webpack": "^4.44.1"
+    "validator": "^13.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4",
-    "webpack-cli": "^3.3.12"
+    "nodemon": "^2.0.4"
   },
   "repository": {
     "type": "git",
