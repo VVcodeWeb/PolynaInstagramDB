@@ -1,6 +1,26 @@
-import { displayMsg, showModal, hideModal } from "./global"
-import { tablesorter } from "./jquery.tablesorter"
 
+ function displayMsg(msg, reloadAfter) {
+    var hidden_comment = document.getElementById("hiddenComment");
+    showModal(hidden_comment);
+    if (msg) {
+        document.getElementById("hiddenP").innerHTML = msg;
+    } else {
+        document.getElementById("hiddenP").innerHTML = "Нет информации";
+    }
+    document.getElementById("closeButton").addEventListener("click", function () {
+        hideModal(hidden_comment);
+        if (reloadAfter == "true") 
+            location.reload();
+        
+    });
+}
+function showModal(id) {
+    $(id).fadeIn("slow");
+}
+
+function hideModal(id) {
+    $(id).fadeOut("slow");
+}
 
 /**
  * <p> Pops up div with 2 buttons yes or no, if pressed yes sends delete request on server with given url
@@ -30,7 +50,6 @@ function submitDeleteForm(url) {
 
 $(document).ready(function () {
     $("#datatableDB").tablesorter();
-    console.log("hello")
     $(".imgInAddition").on("click", function (event) {
         console.log("hello")
     })
